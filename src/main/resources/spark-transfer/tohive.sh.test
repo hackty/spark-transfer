@@ -1,0 +1,14 @@
+source /opt/fi_client/bigdata_env
+kinit -kt /opt/keytab/user.keytab xytd_T
+/opt/fi_client/Spark/spark/bin/spark-submit \
+--class info.puton.component.spark.transfer.Porter \
+--master yarn-client \
+--num-executors 10 \
+--driver-memory 20000m \
+--executor-memory 20000m \
+--executor-cores 10 \
+--conf spark.yarn.executor.memoryOverhead=4096 \
+--conf spark.storage.blockManagerSlaveTimeoutMs=600 \
+--conf spark.network.timeout=600 \
+/home/tdtest/td/spark-transfer/spark-transfer.jar \
+$1 $2
