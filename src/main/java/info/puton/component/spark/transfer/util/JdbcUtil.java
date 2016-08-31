@@ -65,7 +65,7 @@ public class JdbcUtil {
             DatabaseMetaData dbMata  = conn.getMetaData();
             String columnName;
             String columnType;
-            ResultSet colRet = dbMata.getColumns(null,"%", tableName,"%");
+            ResultSet colRet = dbMata.getColumns(null,databaseName, tableName,"%");
             List<Map> metaList = new ArrayList<>();
             while(colRet.next()) {
                 Map metaMap = new HashMap();

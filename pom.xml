@@ -8,7 +8,14 @@
   <packaging>jar</packaging>
 
   <name>spark-transfer</name>
-  <url>http://maven.apache.org</url>
+  <url>http://puton.info/article/spark-transfer.html</url>
+  <developers>
+    <developer>
+      <id>taoyang</id>
+      <email>ty@puton.info</email>
+      <url>puton.info</url>
+    </developer>
+  </developers>
 
   <properties>
 
