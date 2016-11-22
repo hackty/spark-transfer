@@ -65,6 +65,9 @@ public class JdbcUtil {
             DatabaseMetaData dbMata  = conn.getMetaData();
             String columnName;
             String columnType;
+            if(databaseType.equals("DB2DATASOURCE")){
+                databaseName = "%";
+            }
             ResultSet colRet = dbMata.getColumns(null,databaseName, tableName,"%");
             List<Map> metaList = new ArrayList<>();
             while(colRet.next()) {
@@ -102,8 +105,8 @@ public class JdbcUtil {
 //        getMetaList("TDDATASOURCE.DB_ALPHA.TB_USER");
 //        System.out.println(getColumnString("TDDATASOURCE.DB_ALPHA.TB_USER_DETAIL"));
 //        System.out.println(getFullSelect("TDDATASOURCE.DB_ALPHA.TB_USER_DETAIL"));
-        System.out.println(getFullSelect("TDDATASOURCE.DB_ALPHA.TB_WITHTITLE"));
-//        System.out.println(getFullSelect("DB2DATASOURCE.DB_BETA.TB_ORDER"));
+//        System.out.println(getFullSelect("TDDATASOURCE.DB_ALPHA.TB_WITHTITLE"));
+        System.out.println(getFullSelect("DB2DATASOURCE.DB_BETA.TB_ORDER"));
 
     }
 
